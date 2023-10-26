@@ -8,8 +8,6 @@ def validUTF8(data):
     """
     Method determines if data represents a valid UTF-8 encoding.
     """
-
-    # Count for the number of consecutive 1's in the most significant bits
     utf8valid = 0
     for val in data:
         byte = val & 255
