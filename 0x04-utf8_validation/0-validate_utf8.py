@@ -1,5 +1,14 @@
 #!/usr/bin/python3
+"""
+UTF-8 validation file
+"""
+
+
 def validUTF8(data):
+    """
+    Method determines if data represents a valid UTF-8 encoding.
+    """
+
     # Count for the number of consecutive 1's in the most significant bits
     num_bytes = 0
 
