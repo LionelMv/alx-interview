@@ -6,6 +6,9 @@
 
 const request = require('request');
 const movieId = process.argv[2];
+if (!movieId  || isNaN(movieId)) {
+  process.exit(1);
+}
 
 request(`https://swapi-api.alx-tools.com/api/films/${movieId}`, function (error, response, body) {
   if (error) {
