@@ -3,6 +3,7 @@
 Prime Game
 """
 
+
 def is_prime(num):
     """Checks if a number is a prime number.
     """
@@ -12,6 +13,7 @@ def is_prime(num):
         if num % i == 0:
             return False
     return True
+
 
 def isWinner(x, nums):
     """
