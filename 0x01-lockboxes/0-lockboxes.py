@@ -16,16 +16,25 @@ This method determines if all the boxes can be opened.
 
 
 def canUnlockAll(boxes):
-    n = len(boxes)
-    visited = [False] * n
-    visited[0] = True
-    stack = [0]
+    # Initialize a set to keep track of visited boxes
+    visited = set()
+    # Initialize a queue to perform BFS
+    queue = [0]  # Start with the first box
+    # Mark the first box as visited
+    visited.add(0)
 
-    while stack:
-        current_box = stack.pop()
+    # Continue BFS until the queue is empty
+    while queue:
+        # Pop the front of the queue
+        current_box = queue.pop(0)
+        # Iterate through the keys in the current box
         for key in boxes[current_box]:
-            if key < n and not visited[key]:
-                visited[key] = True
-                stack.append(key)
+            # If the key corresponds to an unvisited box
+            if key not in visited and key < len(boxes):
+                # Mark the box as visited
+                visited.add(key)
+                # Add the box to the queue for further exploration
+                queue.append(key)
 
-    return all(visited)
+    # If all boxes have been visited, return True, otherwise return False
+    return len(visited) == len(boxes)
