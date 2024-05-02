@@ -10,7 +10,7 @@ Used Dynamic programming the bottom up approach
 def makeChange(coins, total):
     """this functions determines the fewest number of coins needed to meet
     a given amount total - using coins of different values"""
-    dp = [total + 1] * (total +1)
+    dp = [total + 1] * (total + 1)
     dp[0] = 0
 
     for a in range(1, total + 1):
