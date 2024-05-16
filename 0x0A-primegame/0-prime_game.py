@@ -7,13 +7,12 @@ Prime Game
 def isWinner(x, nums):
     """
     A function to determine the winner between Maria and Ben in a prime game.
-    
     Args:
         x (int): A parameter representing some value.
         nums (list): A list of integers.
-        
     Returns:
-        str or None: The name of the winner (Maria or Ben), or None if it's a tie.
+        str or None: The name of the winner (Maria or Ben),
+        or None if it's a tie.
     """
     if not nums or x <= 0:
         return None
@@ -43,7 +42,7 @@ def isWinner(x, nums):
 
     max_n = max(nums)
     primes = sieve(max_n)
-    
+
     maria_wins = 0
     ben_wins = 0
 
